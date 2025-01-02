@@ -9,8 +9,10 @@ project_files:
 pre_install_actions:
   - |
     #ddev-description:Create required directories
-    mkdir -p .ddev/config/lucee
-    chmod 777 .ddev/config/lucee
+    mkdir -p .ddev/config/lucee/web
+    mkdir -p .ddev/config/lucee/server
+    chmod 777 .ddev/config/lucee/web
+    chmod 777 .ddev/config/lucee/server
 
 post_install_actions:
   - |

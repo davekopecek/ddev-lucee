@@ -14,7 +14,8 @@ services:
         consistency: cached
         source: ${DDEV_APPROOT}/${DDEV_DOCROOT}
         target: /var/www
-      - "./config/lucee:/opt/lucee/web:rw"
+      - "./config/lucee/web:/opt/lucee/web:rw"
+      - "./config/lucee/server:/opt/lucee/server/lucee-server/context:rw"
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
       com.ddev.approot: $DDEV_APPROOT
