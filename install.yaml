@@ -4,15 +4,15 @@ name: lucee
 
 project_files:
   - docker-compose.lucee.yaml
-  - config/lucee/.gitmanaged
+  - lucee/.gitmanaged
 
 pre_install_actions:
   - |
     #ddev-description:Create required directories
-    mkdir -p .ddev/config/lucee/web
-    mkdir -p .ddev/config/lucee/server
-    chmod 777 .ddev/config/lucee/web
-    chmod 777 .ddev/config/lucee/server
+    mkdir -p .ddev/lucee/web
+    mkdir -p .ddev/lucee/server
+    chmod 777 .ddev/lucee/web
+    chmod 777 .ddev/lucee/server
 
 post_install_actions:
   - |

@@ -14,15 +14,14 @@ services:
         consistency: cached
         source: ${DDEV_APPROOT}/${DDEV_DOCROOT}
         target: /var/www
-      - "./config/lucee/web:/opt/lucee/web:rw"
-      - "./config/lucee/server:/opt/lucee/server/lucee-server/context:rw"
+      - "./lucee/web:/opt/lucee/web:rw"
+      - "./lucee/server:/opt/lucee/server/lucee-server/context:rw"
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
       com.ddev.approot: $DDEV_APPROOT
-      com.ddev.describe.lucee: |
-        Server Admin: https://${DDEV_SITENAME}.ddev.site:8888/lucee/admin/server.cfm
-        Web Admin: https://${DDEV_SITENAME}.ddev.site:8888/lucee/admin/web.cfm
-        Password: admin
+      com.ddev.app-type: lucee
+      http_expose: "8888:8888"
+      https_expose: "8888:8888"
 
 networks:
   default:
