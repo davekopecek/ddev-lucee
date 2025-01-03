@@ -8,7 +8,7 @@ setup() {
   
   # Clean up any existing containers that might be using port 8888
   ddev poweroff >/dev/null 2>&1 || true
-  docker rm -f $(docker ps -q) >/dev/null 2>&1 || true
+  docker rm -f $(docker ps -q --filter "publish=8888") >/dev/null 2>&1 || true
   
   ddev delete -Oy ${PROJNAME} >/dev/null 2>&1 || true
   cd "${TESTDIR}"
